@@ -1,4 +1,4 @@
-import { saveData, getData } from "./core.js";
+import { saveData, getData, notyf } from "./core.js";
 
 export const keyUser = "user";
 
@@ -28,12 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("password").value;
     const secondPassword = document.getElementById("cPassword").value;
     if (username === "" || password === "" || secondPassword === "") {
-      alert("Masukkan data valid!");
+      notyf.error("Username dan password tidak boleh kosong!");
       return;
     }
 
     if (password != secondPassword) {
-      alert("Password dan konfirmasi password tidak sama");
+      notyf.error("Password dan konfirmasi password tidak sama");
+      return;
     }
     user.push({
       id: user.length + 1,
@@ -41,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       pw: password,
     });
     saveData(keyUser, user);
-    window.location.href = "index.html";
+    notyf.success("Akun berhasil ditambahkan!");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1000);
   });
 });
