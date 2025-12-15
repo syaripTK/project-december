@@ -43,6 +43,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
   </head>
   <body>
     <div class="container-scroller">
@@ -54,11 +58,7 @@
           class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center"
         >
           <a class="navbar-brand brand-logo" href="../dashboard.html">
-            <i
-              class="mdi mdi-star text-success mt-3"
-              style="font-size: 1.5em"
-            ></i>
-            <h3 class="mt-4">starAdmin</h3>
+            <img src="../img/logo_3.svg" alt="" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="../dashboard.html">
             <img src="../../template/assets/images/logo-mini.svg" alt="logo" />
@@ -67,7 +67,10 @@
         <div
           class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
         >
-          <button class="btn btn-danger float-right ms-auto" onclick="logOut2()">
+          <button
+            class="btn btn-danger float-right ms-auto"
+            onclick="logOut2()"
+          >
             <i class="mdi mdi-logout"></i>Logout
           </button>
 
@@ -107,14 +110,10 @@
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="index.html"
-                      >Mahasiswa</a
-                    >
+                    <a class="nav-link" href="index.html">Mahasiswa</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="../jurusan.html"
-                      >Jurusan</a
-                    >
+                    <a class="nav-link" href="../jurusan.html">Jurusan</a>
                   </li>
                 </ul>
               </div>
@@ -172,7 +171,11 @@
                 </div>
                 <hr class="mt-5" />
                 <div class="d-flex justify-content-center mt-4">
-                  <button class="btn btn-dark btn-lg" id="btnSimpan" onclick="saveMahasiswa()">
+                  <button
+                    class="btn btn-dark btn-lg"
+                    id="btnSimpan"
+                    onclick="saveMahasiswa()"
+                  >
                     <i class="mdi mdi-telegram"></i>Simpan
                   </button>
                 </div>
@@ -190,7 +193,9 @@
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
-
+    <!-- CDN Sweetalert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../../template/assets/vendors/js/vendor.bundle.base.js"></script>
