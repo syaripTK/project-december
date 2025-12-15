@@ -39,11 +39,16 @@
     <link rel="stylesheet" href="../../template/assets/css/demo_1/style.css" />
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="../../template/assets/images/favicon.ico" />
-    
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
   </head>
   <body>
     <div class="container-scroller">
@@ -55,7 +60,7 @@
           class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center"
         >
           <a class="navbar-brand brand-logo" href="../dashboard.html">
-            <img src="../img/logo_3.svg" alt="Logo">
+            <img src="../img/logo_3.svg" alt="Logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="../dashboard.html">
             <img src="../../template/assets/images/logo-mini.svg" alt="logo" />
@@ -64,7 +69,10 @@
         <div
           class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
         >
-          <button class="btn btn-danger float-right ms-auto" onclick="logOut2()">
+          <button
+            class="btn btn-danger float-right ms-auto"
+            onclick="logOut2()"
+          >
             <i class="mdi mdi-logout"></i>Logout
           </button>
 
