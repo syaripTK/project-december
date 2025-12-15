@@ -1,2 +1,2 @@
 # project-december
-Repository untuk project di bulan December
+Berawal dari tugas kuliah tentang pembuatan mini app CRUD yang mengkombinasikan Local Storage sevagai simulasi database, saya mencoba untuk mengembangkannya menjadi sebuah mini app yang........
