@@ -1,4 +1,4 @@
-import { getData, saveData } from "./core.js";
+import { getData, saveData, notyf } from "./core.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const user = getData("user");
@@ -17,20 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
         data.pw === passwordLogin
     );
     if (loginName === "" || passwordLogin === "") {
-      alert("Mohon isi data");
+      notyf.error("Mohon isi data");
       return;
     }
     if (!foundUser) {
-      alert("Maaf, akun tidak terdaftar!");
-      return;
-    }
-    if (foundUser.pw !== passwordLogin) {
-      alert("Password salah!");
+      notyf.error("Maaf, akun tidak terdaftar!");
       return;
     }
     saveData("currentUser", foundUser);
     console.log("Login sebagai user:", foundUser.namaUser);
-    window.location.href = "dashboard.html";
-    alert("Sukses!, anda berhasil login");
+    notyf.success("Sukses!, anda berhasil login");
+    setTimeout(() => {
+      window.location.href = "dashboard.html";
+    }, 2000);
   });
 });
