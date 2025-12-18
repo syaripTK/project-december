@@ -60,21 +60,7 @@ JavaScript (Vanilla)	Logika aplikasi
 SweetAlert2	Modal alert & konfirmasi
 Notyf	Toast notification
 localStorage	Penyimpanan data sementara
-📂 Struktur Folder (Contoh)
 
-project-december/
-├── index.html          # Halaman Login
-├── register.html       # Halaman Register
-├── dashboard.html      # Halaman utama
-├── mahasiswa.html      # CRUD Data Mahasiswa
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js         # Entry point
-│   ├── auth.js         # Login & Register
-│   ├── mahasiswa.js   # CRUD Mahasiswa
-│   └── storage.js     # Helper localStorage
-└── README.md
 
 🔑 Alur Login & Register
 
@@ -101,32 +87,6 @@ User bisa:
 Edit data
 
 Hapus data (dengan konfirmasi SweetAlert2)
-
-🔔 Contoh Implementasi Library
-
-SweetAlert2 (Konfirmasi Hapus)
-
-Swal.fire({
-  title: 'Hapus data?',
-  text: 'Data tidak bisa dikembalikan',
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Ya, hapus'
-}).then(result => {
-  if (result.isConfirmed) {
-    deleteMahasiswa(id)
-    notyf.success('Data berhasil dihapus')
-  }
-})
-Notyf (Notifikasi)
-const notyf = new Notyf({
-  duration: 2500,
-  position: { x: 'right', y: 'top' }
-})
-
-
-notyf.success('Data berhasil disimpan')
-notyf.error('Terjadi kesalahan')
 
 ⚠️ Catatan Penting
 
