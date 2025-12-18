@@ -1,4 +1,4 @@
-import { getData, saveData, notyf } from "./core.js";
+import { getData, saveData, notyf, notyfy } from "./core.js";
 
 const keyMahasiswa = "mahasiswa";
 
@@ -126,7 +126,6 @@ function confirmDelete(id) {
   });
 }
 
-
 const deleteStudent = (id) => {
   const index = mahasiswa.findIndex((i) => i.id === id);
   if (index !== -1) {
@@ -206,14 +205,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const logOut = () => {
-  alert("Anda keluar dari sistem");
-  window.location.href = "index.html";
+  notyfy.success("Anda keluar dari sistem");
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1800);
 };
 
 const logOut2 = () => {
-  alert("Anda keluar dari sistem");
-  window.location.href = "../index.html";
+  notyfy.success("Anda keluar dari sistem");
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 1800);
 };
 
-window.logOut2 = logOut2;
 window.logOut = logOut;
+window.logOut2 = logOut2;
