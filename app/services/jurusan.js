@@ -1,13 +1,7 @@
 import { saveData, getData, notyf } from "./core.js";
 const keyJurusan = "prodi";
 
-// const saveData = (key, value) => {
-//   return localStorage.setItem(key, JSON.stringify(value));
-// };
-// const getData = (key) => {
-//   const ambil = localStorage.getItem(key);
-//   return ambil ? JSON.parse(ambil) : [];
-// };
+
 if (!localStorage.getItem(keyJurusan)) {
   saveData(keyJurusan, []);
 }

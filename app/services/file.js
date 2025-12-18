@@ -1,4 +1,4 @@
-import { getData, saveData } from "./core.js";
+import { getData, saveData, notyf, notyfy } from "./core.js";
 
 const keyMahasiswa = "mahasiswa";
 
@@ -101,7 +101,7 @@ const renderSecondTable = () => {
     <td>
     <button type="button"
     class="btn btn-icons btn-rounded btn-danger delete-student"
-    onclick="deleteConfirm(${x.id})"
+    onclick="confirmDelete(${x.id})"
     title="Hapus Mahasiswa">
     <i class="mdi mdi-delete"></i>
     </button>
@@ -109,12 +109,22 @@ const renderSecondTable = () => {
     </tr>`;
   });
 };
-const deleteConfirm = (id) => {
-  const isDelete = confirm("Yakin mau dihapus?");
-  if (isDelete) {
-    deleteStudent(id);
-  }
-};
+function confirmDelete(id) {
+  Swal.fire({
+    title: " Hapus data",
+    text: "Anda yakin mau menghapus data ini?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Ya, hapus",
+    cancelButtonText: "Batal",
+    confirmButtonColor: "#dc3545",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteStudent(id);
+      notyf.success("Data berhasil dihapus");
+    }
+  });
+}
 
 const deleteStudent = (id) => {
   const index = mahasiswa.findIndex((i) => i.id === id);
@@ -125,7 +135,7 @@ const deleteStudent = (id) => {
   }
 };
 
-window.deleteConfirm = deleteConfirm;
+window.confirmDelete = confirmDelete;
 
 const secondTable = document.getElementById("second-table");
 document.addEventListener("DOMContentLoaded", () => {
@@ -195,14 +205,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const logOut = () => {
-  alert("Anda keluar dari sistem");
-  window.location.href = "index.html";
+  notyfy.success("Anda keluar dari sistem");
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1800);
 };
 
 const logOut2 = () => {
-  alert("Anda keluar dari sistem");
-  window.location.href = "../index.html";
+  notyfy.success("Anda keluar dari sistem");
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 1800);
 };
 
-window.logOut2 = logOut2;
 window.logOut = logOut;
+window.logOut2 = logOut2;

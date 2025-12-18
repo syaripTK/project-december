@@ -19,9 +19,17 @@ export const getData = (key, defaultValue = []) => {
 };
 
 export const notyf = new Notyf({
-    duration: 2000,
-    position: {
-      x: 'right',
-      y: 'top'
-    }
-  })
+  duration: 2000,
+  position: {
+    x: "right",
+    y: "top",
+  },
+});
+
+export const notyfy = new Notyf({
+  duration: 2000,
+  position: {
+    x: "right",
+    y: "bottom",
+  },
+});
